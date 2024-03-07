@@ -10,8 +10,8 @@ import (
 )
 
 func main() {
-	app := fiber.New()
 	database.ConnectDb()
+	app := fiber.New()
 
 	app.Get("/", monitor.New(monitor.Config{Refresh: time.Second}))
 
